@@ -16,7 +16,7 @@ function TinderCards() {
   ]);
 
   // GOOD (Push to an array in React)
-  setPeople([...people, 'sonny', 'qazi'])
+  // setPeople([...people, 'sonny', 'qazi']);
 
   // BAD, but does the same thing in vanilla JS
   // const people = [];
@@ -26,12 +26,13 @@ function TinderCards() {
     <div>
       <h1>Tinder cards</h1>
 
-      {people.map((person) => (
-        <TinderCard
-          className="swipe"
-          key={person.name}
-          preventSwipe={["up", "down"]}
-        >
+      <div className="tinderCards__cardContainer">
+        {people.map((person) => (
+          <TinderCard
+            className="swipe"
+            key={person.name}
+            preventSwipe={["up", "down"]}
+          >
           <div 
             style={{ backgroundImage: `url(${person.url})` }}
             className="card"
@@ -40,8 +41,9 @@ function TinderCards() {
           </div>
         </TinderCard>
       ))}
+      </div>
     </div>
   )
 }
 
-export default TinderCards
+export default TinderCards;

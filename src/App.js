@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <h1>Let's build a Tinder Clone App! 🚀</h1>
       <Header />
       <Router>
         <Switch>

@@ -11,9 +11,15 @@ function TinderCards() {
   useEffect(() => {
     // this is where the code runs..
   
-    database.collection('people').onSnapshot(snapshot => (
-      setPeople(snapshot.docs.map(doc => doc.data()))
-    ))
+    const unsubscribe = database
+      .collection('people')
+      .onSnapshot(snapshot => 
+        setPeople(snapshot.docs.map(doc => doc.data()))
+      );
+
+      return () => {
+        unsubscribe();
+      }
   }, []);
 
   // GOOD (Push to an array in React)

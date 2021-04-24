@@ -19,10 +19,7 @@ function Header({ backButton }) {
           <PersonIcon fontSize="large" className="header__icon" />
         </IconButton>
       )}
-      <IconButton>
-        <PersonIcon className="header__icon" fontSize="large" />
-      </IconButton>
-
+      
       <Link to="/">
         <img 
           className="header__logo"
